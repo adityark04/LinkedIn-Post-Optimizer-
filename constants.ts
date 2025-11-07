@@ -1,0 +1,1 @@
+export const DRAFT_PLACEHOLDER = `Excited to share that our team has been working on a new project that uses AI to optimize content. It's been a challenging journey, but the results are looking promising. We believe this will help marketers create more engaging posts. We're planning to launch it next month.`;

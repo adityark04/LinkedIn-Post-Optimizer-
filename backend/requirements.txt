@@ -1,0 +1,25 @@
+Flask==2.3.2
+Flask-Cors==4.0.0
+
+# Deep Learning Libraries
+torch==2.1.0
+transformers==4.35.0
+scikit-learn==1.3.2
+pandas==2.1.3
+numpy==1.26.2
+
+# Training and Data Processing
+datasets==2.15.0
+nltk==3.8.1
+tqdm==4.66.1
+
+# Model Utilities
+sentencepiece==0.1.99
+accelerate==0.25.0
+
+# Web Scraping
+selenium==4.15.2
+webdriver-manager==4.0.1
+beautifulsoup4==4.12.2
+requests==2.31.0
+lxml==4.9.3
