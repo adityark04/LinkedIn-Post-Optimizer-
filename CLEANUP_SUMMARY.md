@@ -1,4 +1,6 @@
-# Files Cleaned - Project Structure
+# (Archived) Cleanup Summary
+
+This internal cleanup log is archived. For the current public-facing structure and instructions, see `README.md`.
 
 ## ✅ Removed Unused Files
 
@@ -116,7 +118,7 @@
 
 ---
 
-## 🎯 Current Project Structure
+## (Legacy) Project Structure
 
 ```
 ai-linkedin-post-optimizer/

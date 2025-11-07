@@ -1,56 +1,43 @@
-# Quick Start - Run Project Now
+# Quick Start
 
-## ✅ Current Status
-Everything is already set up! Just start the servers.
+Get the app running locally in minutes.
 
-## 🚀 Quick Start (2 Commands)
+## Prerequisites
+- Node.js 18+
+- Python 3.11 with pip
 
-### Terminal 1 - Start Backend
+## 1) Install dependencies
 ```powershell
-cd C:\Users\adity\Downloads\Aditya\College\Sem_7\DL\Replit\ai-linkedin-post-optimizer\backend
-python app.py
+# From project root
+npm install
+
+# Backend deps
+cd backend
+pip install -r requirements.txt
 ```
-**Wait for**: `* Running on http://127.0.0.1:5001`
 
-### Terminal 2 - Start Frontend (New Terminal Window)
+## 2) Set your LLM key (Groq recommended)
 ```powershell
-cd C:\Users\adity\Downloads\Aditya\College\Sem_7\DL\Replit\ai-linkedin-post-optimizer
+# New terminal session where you run the backend
+$env:GROQ_API_KEY = "gsk_your-key-here"
+```
+Get a free key: see GET_GROQ_KEY.md
+
+## 3) Start the servers
+```powershell
+# Terminal 1 – Backend
+cd backend
+C:/Users/adity/Downloads/VS_Code/python.exe app.py
+```
+```powershell
+# Terminal 2 – Frontend (project root)
+cd ..
 npm run dev
 ```
-**Wait for**: `➜ Local: http://localhost:3000/`
 
-### Open Browser
-Go to: **http://localhost:3000**
+Open http://localhost:3000 and paste your draft to get three optimized versions.
 
----
-
-## That's it! 🎉
-
-Enter a LinkedIn post draft and click "Optimize Post" to see AI-generated suggestions.
-
----
-
-## 📁 Clean Project Structure
-
-The project has been cleaned to include only essential files:
-- **15 root files** (HTML, TypeScript, config files, docs)
-- **9 backend scripts** (app, models, training, data generation)
-- **3 components** (Icons, Spinner, MarkdownRenderer)
-- **1 service** (apiService for backend communication)
-- **3 data files** (train, test, full datasets - 178 posts)
-- **Trained models** (Transformer, CNN, T5)
-
-All unused files removed for a cleaner codebase!
-
----
-
-## If Models Need Training First
-
-If backend shows model loading errors:
-
-```powershell
-cd C:\Users\adity\Downloads\Aditya\College\Sem_7\DL\Replit\ai-linkedin-post-optimizer\backend
-python train_models.py
-```
-
-Wait 20-30 minutes for training to complete, then start servers as above.
+## Troubleshooting
+- Backend won’t start: ensure `$env:GROQ_API_KEY` is set in the same terminal.
+- Vector DB empty: run `C:/Users/adity/Downloads/VS_Code/python.exe backend/rag_service.py` once.
+- More details: see README.md and RAG_SETUP_GUIDE.md.

@@ -1,4 +1,6 @@
-# LinkedIn Post Optimizer - Quality Improvement Plan
+# (Archived) Quality Improvement Plan
+
+Public users should refer to `README.md` for the current RAG approach. This document describes earlier reasoning retained for internal reference.
 
 ## 🎯 Current Issues
 
@@ -278,7 +280,7 @@ What's your biggest content challenge? Drop it below 💬
 
 ---
 
-## 🚀 Next Steps
+## (Legacy) Next Steps
 
 ### Immediate Actions:
 1. **Collect More Data**: Scrape 500+ high-quality LinkedIn posts

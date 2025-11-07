@@ -40,7 +40,7 @@ C:/Users/adity/Downloads/VS_Code/python.exe ml_model_service_rag.py
 
 You should see:
 ```
-✅ Groq Llama-3.1-70b enabled (FREE & FAST!)
+✅ Groq Llama-3.1-8b enabled (FREE & FAST!)
 ```
 
 ---
@@ -61,7 +61,7 @@ cd c:\Users\adity\Downloads\Aditya\College\Sem_7\DL\Replit\ai-linkedin-post-opti
 npm run dev
 ```
 
-Then open: **http://localhost:3001**
+Then open: **http://localhost:3000**
 
 ---
 

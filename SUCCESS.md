@@ -1,4 +1,6 @@
-# 🎉 SUCCESS! RAG System Fully Operational
+# (Archived) SUCCESS Log
+
+This detailed success/status log is internal. Public users should rely on `README.md` and `QUICK_START.md` for concise usage.
 
 ## ✅ COMPLETE - High-Quality LinkedIn Post Generation is LIVE!
 
@@ -232,7 +234,7 @@ not just generic training data. It sees what works and mimics that style!
 
 ---
 
-## 🎯 What You Can Do Now
+## (Legacy) What You Can Do Now
 
 1. **Test the App**
    - Start backend: `C:/Users/adity/Downloads/VS_Code/python.exe backend/app.py`

@@ -1,3 +1,4 @@
+# Note: This long-form guide has been archived. For the up-to-date public instructions, see README.md and QUICK_START.md. The app now uses RAG + Groq; model training steps below are legacy.
 # AI LinkedIn Post Optimizer - Complete Setup & Run Guide
 
 ## 📋 Prerequisites

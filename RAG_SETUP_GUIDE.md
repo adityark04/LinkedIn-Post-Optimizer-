@@ -1,4 +1,5 @@
-# RAG Implementation Complete! 🎉
+# RAG Setup Guide (Public)
+For quick run steps, see `README.md` and `QUICK_START.md`. This guide provides more context on the RAG layer and enabling Groq.
 
 ## What's Been Implemented
 
@@ -15,7 +16,7 @@
 - Handles multiple JSON dataset formats
 
 ### ✅ RAG-Enhanced ML Service (`ml_model_service_rag.py`)
-- **Dual mode**: OpenAI GPT-3.5-turbo OR pattern-based fallback
+- Dual mode: Groq Llama-3.1 (preferred) or OpenAI fallback
 - **Intelligent prompting** with RAG examples
 - **Post-processing** rules for emoji/hashtag quality
 - **3 optimization styles**: Hook, Concise, Rephrased
@@ -38,18 +39,12 @@
 
 ---
 
-## Enable High-Quality Mode (OpenAI GPT-3.5)
+## Enable High-Quality Mode (Groq Recommended)
 
-### Option A: Get Free OpenAI Credits
-1. Sign up at https://platform.openai.com/
-2. Get **$5 free credits** (enough for ~2,500 post generations)
-3. Go to https://platform.openai.com/api-keys
-4. Create new API key, copy it
-
-### Option B: Use Groq (FREE, Fast Llama-3.1)
-1. Sign up at https://console.groq.com/
-2. Get free API key (unlimited for 14 days)
-3. Modify `ml_model_service_rag.py` to use Groq instead of OpenAI
+1. Sign up: https://console.groq.com/
+2. Create API key (starts with gsk_)
+3. In terminal: `$env:GROQ_API_KEY = "gsk_your-key-here"`
+4. Start backend: `C:/Users/adity/Downloads/VS_Code/python.exe backend/app.py`
 
 ---
 
@@ -57,11 +52,7 @@
 
 ### Step 1: Set API Key (Windows PowerShell)
 ```powershell
-# Temporary (current session only)
-$env:OPENAI_API_KEY = "sk-your-api-key-here"
-
-# Permanent (add to PowerShell profile)
-[Environment]::SetEnvironmentVariable("OPENAI_API_KEY", "sk-your-api-key-here", "User")
+$env:GROQ_API_KEY = "gsk_your-key-here"
 ```
 
 ### Step 2: Test RAG Service
@@ -69,19 +60,10 @@ $env:OPENAI_API_KEY = "sk-your-api-key-here"
 C:/Users/adity/Downloads/VS_Code/python.exe backend/ml_model_service_rag.py
 ```
 
-Expected output:
+Expected output includes:
 ```
-✅ OpenAI GPT-3.5-turbo enabled
+✅ Groq Llama-3.1-8b enabled
 Vector database ready with 178 posts.
-
-ENGAGEMENT HOOK:
-(High-quality GPT-generated post with proper emojis, hashtags, CTA)
-
-CONCISE VERSION:
-(Short, punchy version)
-
-PROFESSIONAL REPHRASE:
-(Polished, professional version)
 ```
 
 ### Step 3: Start Backend
@@ -90,47 +72,16 @@ cd backend
 C:/Users/adity/Downloads/VS_Code/python.exe app.py
 ```
 
-You should see:
+You should see lines confirming Groq or OpenAI plus server start:
 ```
-✅ Using RAG-enhanced ML service
-✅ OpenAI GPT-3.5-turbo enabled
-Vector database ready with 178 posts.
+✅ Groq Llama-3.1-8b enabled
  * Running on http://127.0.0.1:5001
 ```
 
 ---
 
-## Alternative: Use Groq (FREE Llama-3.1)
-
-If you want **FREE unlimited generation**, use Groq instead:
-
-### Groq Setup
-1. Sign up: https://console.groq.com/
-2. Get API key (free, no credit card)
-3. Install: `pip install groq`
-
-### Modify `ml_model_service_rag.py`
-Replace OpenAI client with Groq:
-
-```python
-from groq import Groq
-
-# In __init__:
-self.client = Groq(api_key=os.environ.get('GROQ_API_KEY'))
-
-# In generate_with_gpt (rename to generate_with_llm):
-response = self.client.chat.completions.create(
-    model="llama-3.1-70b-versatile",  # or "llama-3.1-8b-instant" for speed
-    messages=[...],
-    max_tokens=max_tokens,
-    temperature=temperature
-)
-```
-
-Set Groq API key:
-```powershell
-$env:GROQ_API_KEY = "gsk_your-groq-key-here"
-```
+## Optional: OpenAI Fallback
+If `GROQ_API_KEY` is not set and `OPENAI_API_KEY` is, the backend will use OpenAI automatically.
 
 ---
 
